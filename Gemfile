@@ -6,6 +6,9 @@ gem 'hanami-model', '~> 1.3'
 
 gem 'pg'
 
+# Template engine
+gem 'slim'
+
 group :development do
   # Code reloading
   # See: https://guides.hanamirb.org/projects/code-reloading
