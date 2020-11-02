@@ -1,0 +1,2 @@
+module SampleSite
+end

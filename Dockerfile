@@ -1,0 +1,3 @@
+FROM ruby:2.6.5
+
+EXPOSE 2300
