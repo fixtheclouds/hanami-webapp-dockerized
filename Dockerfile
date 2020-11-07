@@ -14,5 +14,3 @@ ENV HANAMI_ENV development
 RUN bundle install -j $(nproc) --quiet
 
 EXPOSE 2300
-
-ENTRYPOINT ["bundle", "exec"]
