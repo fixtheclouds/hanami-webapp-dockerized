@@ -1,13 +1,16 @@
 version: '2'
 services:
   postgres:
-    image: postgres:13.0
+    image: postgres:10
     restart: always
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
       - '5432:5432'
+    volumes:
+      - database_data:/var/lib/postgresql/data
+      - ./entrypoints/init.sql:/docker-entrypoint-initdb.d/init.sql
   web:
     build: .
     command: bundle exec hanami server
@@ -17,3 +20,7 @@ services:
       - postgres
     links:
       - postgres
+
+volumes:
+  database_data:
+    driver: local
