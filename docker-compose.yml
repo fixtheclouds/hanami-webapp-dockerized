@@ -2,13 +2,12 @@ version: '2'
 services:
   postgres:
     image: postgres:13.0
+    restart: always
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
       - '5432:5432'
-    volumes:
-      - database_data:/var/lib/postgresql/data
   web:
     build: .
     command: bundle exec hanami server
@@ -18,7 +17,3 @@ services:
       - postgres
     links:
       - postgres
-
-volumes:
-  database_data:
-    driver: local
