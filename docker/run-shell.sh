@@ -2,4 +2,4 @@
 
 set -e
 
-docker-compose run web sh "$@"
+docker-compose exec web sh "$@"
