@@ -1,7 +1,7 @@
 require 'bundler/setup'
 require 'hanami/setup'
 require 'hanami/model'
-require_relative '../lib/sample_site'
+require_relative '../lib/hanami-test'
 require_relative '../apps/web/application'
 
 Hanami.configure do
