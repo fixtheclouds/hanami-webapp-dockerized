@@ -22,7 +22,12 @@ services:
       - postgres
     links:
       - postgres
+    volumes:
+      - .:/web
+      - bundle:/bundle
 
 volumes:
   database_data:
+    driver: local
+  bundle:
     driver: local
