@@ -1,6 +1,6 @@
 namespace :populate do
   # Create default posts
-  task :posts do
+  task posts: :environment do
     repository = PostRepository.new
     repository.create(
       title: 'Welcome',

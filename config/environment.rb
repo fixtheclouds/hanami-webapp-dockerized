@@ -28,7 +28,7 @@ Hanami.configure do
   end
 
   mailer do
-    root 'lib/sample_site/mailers'
+    root 'lib/hanami-test/mailers'
 
     # See https://guides.hanamirb.org/mailers/delivery
     delivery :test
