@@ -6,8 +6,8 @@ Hanami test project run by docker.
 ```sh
 # build & run
 $ docker-compose up --build
-# init database
-$ ./docker/init.sh
+# setup project with ready data
+$ ./docker/setup.sh
 # run PG console
 $ ./docker/run-postgres.sh
 # run shell inside web app container
