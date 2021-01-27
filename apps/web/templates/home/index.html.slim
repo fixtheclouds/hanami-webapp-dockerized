@@ -1,4 +1,12 @@
-h1 This is basic hanami app
+h1 All posts
 
-ul
-  li Should launch on any machine
+div
+  - unless posts.empty?
+    - posts.each do |post|
+      .post
+        .h3
+          = post.title
+        .post-content
+          = post.body
+  - else
+    | Nothing here yet.
