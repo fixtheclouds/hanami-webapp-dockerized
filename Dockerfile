@@ -17,7 +17,7 @@ RUN bundle install -j $(nproc) --quiet
 
 # Install node things
 COPY package*.json ${WEB_ROOT}/
-RUN npm i -g
+RUN npm i
 
 COPY . ${WEB_ROOT}
 

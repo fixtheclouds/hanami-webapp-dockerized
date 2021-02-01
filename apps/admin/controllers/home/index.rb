@@ -1,4 +1,4 @@
-module Web
+module Admin
   module Controllers
     module Home
       class Index

@@ -2,3 +2,5 @@
 node_modules
 .vscode
 public/assets/bundle.js
+.ruby-version
+.nvmrc
