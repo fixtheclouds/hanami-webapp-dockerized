@@ -16,8 +16,9 @@ COPY Gemfile.lock ${WEB_ROOT}
 RUN bundle install -j $(nproc) --quiet
 
 # Install node things
-COPY package.json ${WEB_ROOT}
-COPY package-lock.json ${WEB_ROOT}}
-RUN npm i
+COPY package*.json ${WEB_ROOT}/
+RUN npm i -g
+
+COPY . ${WEB_ROOT}
 
 EXPOSE 2300

@@ -25,9 +25,12 @@ services:
     volumes:
       - .:/web
       - bundle:/bundle
+      - node_modules:/web/node_modules
 
 volumes:
   database_data:
     driver: local
   bundle:
+    driver: local
+  node_modules:
     driver: local
