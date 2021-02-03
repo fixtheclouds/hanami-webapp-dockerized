@@ -2,7 +2,7 @@ module Admin
   module Controllers
     module Home
       class Index
-        include Web::Action
+        include Admin::Action
 
         expose :posts
 

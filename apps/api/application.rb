@@ -1,8 +1,7 @@
 require 'hanami/helpers'
-require 'hanami/api'
 
 module Api
-  class Application < Hanami::API
+  class Application < Hanami::Application
     configure do
       ##
       # BASIC

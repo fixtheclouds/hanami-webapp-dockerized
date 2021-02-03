@@ -2,12 +2,12 @@ require 'bundler/setup'
 require 'hanami/setup'
 require 'hanami/model'
 require_relative '../lib/web'
-require_relative '../apps/web/application'
+require_relative '../apps/admin/application'
 require_relative '../apps/api/application'
 
 Hanami.configure do
   mount Api::Application, at: '/api'
-  mount Web::Application, at: '/'
+  mount Admin::Application, at: '/admin'
 
   model do
     ##
@@ -30,7 +30,7 @@ Hanami.configure do
   end
 
   mailer do
-    root 'lib/hanami-test/mailers'
+    root 'lib/web/mailers'
 
     # See https://guides.hanamirb.org/mailers/delivery
     delivery :test

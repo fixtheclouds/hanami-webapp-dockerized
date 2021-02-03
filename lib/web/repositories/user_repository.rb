@@ -1,6 +1,6 @@
 require 'warden'
 
-class UsersRepository < Hanami::Repository
+class UserRepository < Hanami::Repository
   def sign_in(email, password)
     user = find_by_email(email)
     user && user.password == password ? user : throw(:warden)

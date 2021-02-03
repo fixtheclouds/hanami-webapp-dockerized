@@ -1,7 +1,7 @@
 module Admin
   module Views
     class ApplicationLayout
-      include Web::Layout
+      include Admin::Layout
     end
   end
 end
