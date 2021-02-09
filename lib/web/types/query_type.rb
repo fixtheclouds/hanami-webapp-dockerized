@@ -1,17 +1,15 @@
 require_relative 'post_type'
-require_relative 'user_type'
 
 module Types
-  QueryType ||= GraphQL::ObjectType.define do
-    name 'Query'
+  class QueryType < GraphQL::Schema::Object
     description 'The query root for the schema'
 
-    field :post do
-      type PostType
-      argument :id, !types.ID
-      resolve -> (_, args, _) {
-        PostRepository.find(args[:id])
-      }
+    field :posts, type: PostType, null: true do
+      description 'Retrieve all posts'
+    end
+
+    def posts
+      ::PostRepository.all
     end
   end
 end

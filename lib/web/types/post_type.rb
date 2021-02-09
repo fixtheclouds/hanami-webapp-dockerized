@@ -1,12 +1,15 @@
-module Types
-  PostType ||= GraphQL::ObjectType.define do
-    name 'Post'
+require_relative 'base_object'
+require_relative 'user_type'
 
-    field :id, types.ID
-    field :title, types.String
-    field :body, types.String
-    field :user, types[!UserType]
-    field :created_at, types.Int
-    field :updated_at, types.Int
+module Types
+  class PostType < BaseObject
+    graphql_name 'Post'
+
+    field :id, ID, null: false
+    field :title, String, null: true
+    field :body, String, null: false
+    field :user, UserType, null: false
+    field :created_at, Int, null: false
+    field :updated_at, Int, null: false
   end
 end

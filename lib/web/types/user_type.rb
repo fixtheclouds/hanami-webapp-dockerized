@@ -1,8 +1,9 @@
+require_relative 'base_object'
 module Types
-  UserType ||= GraphQL::ObjectType.define do
-    name 'User'
+  class UserType < BaseObject
+    graphql_name 'User'
 
-    field :id, types.ID
-    field :name, types.String
+    field :id, ID, null: false
+    field :name, String, null: false
   end
 end

@@ -6,3 +6,4 @@
 get '/posts', to: 'posts#index'
 get '/posts/:id', to: 'posts#show'
 get '/graphql', to: 'graphql#index'
+get '/graphql/:id', to: 'graphql#show'

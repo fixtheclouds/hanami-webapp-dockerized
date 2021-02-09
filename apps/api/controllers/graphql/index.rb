@@ -4,10 +4,15 @@ module Api
       class Index
         include Api::Action
 
+        params do
+          required(:query) { filled? & str? }
+          optional(:variables).maybe(:hash?)
+        end
+
         def call(params)
           query_variables = params[:vairables] || {}
           self.body = JSON.generate(
-            ::Types::Schema.execute(
+            ::AppSchema.execute(
               params[:query],
               variables: query_variables
             )
