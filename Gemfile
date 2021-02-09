@@ -7,6 +7,7 @@ gem 'hanami-model', '~> 1.3'
 
 # Databases
 gem 'pg'
+gem 'graphql'
 
 # Auth
 gem 'bcrypt'
