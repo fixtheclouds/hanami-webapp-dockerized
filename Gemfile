@@ -33,6 +33,7 @@ group :test do
   gem 'capybara'
 end
 
+# Server
 group :production do
   gem 'puma'
 end
