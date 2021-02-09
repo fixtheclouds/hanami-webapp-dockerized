@@ -18,7 +18,8 @@ namespace :populate do
     repository = PostRepository.new
     repository.create(
       title: 'Welcome',
-      body: 'Text goes here'
+      body: 'Text goes here',
+      user_id: UserRepository.new.first.id
     )
   end
 end
