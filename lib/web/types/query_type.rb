@@ -1,4 +1,5 @@
 require_relative 'post_type'
+require_relative 'user_type'
 
 module Types
   class QueryType < GraphQL::Schema::Object
@@ -8,8 +9,17 @@ module Types
       description 'Retrieve all posts'
     end
 
+    field :user, type: UserType, null: true do
+      description 'Fetch user'
+      argument :id, ID, required: true
+    end
+
     def posts
       ::PostRepository.new.all
+    end
+
+    def user(id:)
+      ::UserRepository.new.find(id)
     end
   end
 end
