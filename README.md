@@ -2,6 +2,8 @@
 
 Hanami test project run by docker.
 
+**Ok Hanami looks dead, discontinuing this repo. Will move some ideas to another project...**
+
 ## Setup
 ```sh
 # build & run
